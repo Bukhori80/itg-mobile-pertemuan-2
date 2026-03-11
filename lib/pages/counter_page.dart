@@ -12,6 +12,13 @@ class _CounterPageState extends State<CounterPage> {
 
   void tambah() => setState(() => count++);
   void reset() => setState(() => count = 0);
+  void kurang() { 
+    if (count > 0) { 
+      setState(() {
+        count--;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -29,13 +36,28 @@ class _CounterPageState extends State<CounterPage> {
             ),
             const SizedBox(height: 16),
             Row(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                ElevatedButton(onPressed: tambah, child: const Text('Tambah')),
-                const SizedBox(width: 12),
-                OutlinedButton(onPressed: reset, child: const Text('Reset')),
-              ],
-            ),
+                mainAxisAlignment: MainAxisAlignment.center, // DIUBAH
+                children: [
+                  ElevatedButton(
+                    onPressed: tambah,
+                    child: const Text('Tambah'),
+                  ),
+
+                  const SizedBox(width: 16), // DIUBAH (jarak diperbesar)
+
+                  ElevatedButton(
+                    onPressed: kurang,
+                    child: const Text('Kurang'),
+                  ),
+
+                  const SizedBox(width: 16), // DIUBAH
+
+                  OutlinedButton(
+                    onPressed: reset,
+                    child: const Text('Reset'),
+                  ),
+                ],
+              ),
           ],
         ),
       ),
