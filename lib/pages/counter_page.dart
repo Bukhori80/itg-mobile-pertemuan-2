@@ -31,17 +31,18 @@ class _CounterPageState extends State<CounterPage> {
             const Text('Counter:', style: TextStyle(fontSize: 18)),
             const SizedBox(height: 8),
             Text(
-              '$count',
+              '$count', 
               style: const TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
             ),
             const SizedBox(height: 16),
             Row(
                 mainAxisAlignment: MainAxisAlignment.center, // DIUBAH
                 children: [
+                  // ini tombol untuk menambah angka
                   ElevatedButton(
                     onPressed: tambah,
                     child: const Text('Tambah'),
-                  ),
+                  ), 
 
                   const SizedBox(width: 16), // DIUBAH (jarak diperbesar)
 
